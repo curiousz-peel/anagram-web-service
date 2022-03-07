@@ -8,13 +8,14 @@ import (
 var WordsMap map[string][]string
 
 func anagramsHandler(writer http.ResponseWriter, request *http.Request) {
+	writer.WriteHeader(http.StatusCreated)
+	writer.Header().Set("Content-Type", "application/json")
 	word := request.FormValue("word")
 	if word == "" {
 		fmt.Fprint(writer, "Inexistent or no value for 'word' as URL parameter!")
 		return
 	} else {
-		ordered_word := orderWord(word)
-		fmt.Println(WordsMap[ordered_word])
+		writer.Write(buildJSON(writer, WordsMap, word))
 	}
 }
 func main() {
