@@ -28,7 +28,6 @@ func buildPathToTXT() string {
 		fmt.Printf(err.Error())
 		os.Exit(1)
 	}
-	fmt.Printf(filepath.Join(dirPath, "words.txt") + "\n")
 	return filepath.Join(dirPath, "words.txt")
 }
 
