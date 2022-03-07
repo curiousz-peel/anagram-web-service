@@ -10,7 +10,6 @@ import (
 )
 
 func initWordsFromTXT(filePath string, wordsMap map[string][]string) {
-	start := time.Now()
 	f, err := os.Open(filePath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error on opening words file: %v\n", err)
@@ -22,7 +21,6 @@ func initWordsFromTXT(filePath string, wordsMap map[string][]string) {
 		orderedWord := orderWord(input.Text())
 		wordsMap[orderedWord] = append(wordsMap[orderedWord], input.Text())
 	}
-	fmt.Printf("initWordsFromTXT time is: %s", time.Since(start))
 }
 
 func initWordsTXTInMemory(filePath string, wordsMap map[string][]string) {
