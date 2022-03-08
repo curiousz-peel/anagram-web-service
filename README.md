@@ -32,3 +32,5 @@ Anagrams for PARSE:
 Anagrams for RUGGED:
 
 ![RUGGED anagrams](readme_images/rugged_anagrams.PNG)
+
+**NOTE**: The web service endpoint could be otherwise tested by running 'curl http://localhost:8080/anagrams?word=your_word' from another terminal after starting the service
